@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <nav>
+        <h1>Hugo Valverde</h1>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>Hi, I'm [Your Name], a passionate [Your Profession] with experience in [Your Skills or Technologies]. I enjoy turning complex problems into simple, beautiful, and intuitive designs. When I'm not coding or pushing pixels, you can find me in the [Your Hobby or Interest].</p>
+            <img src="imgs/me.jpg" alt="Your Photo" class="profile-image">
+        </section>
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects-container">
+                <div class="project">
+                    <h3>LCS Spring 2023</h3>
+                    <div class="carousel">
+                        <img class="carousel-image" src="project-1.jpg" alt="Project 1 Screenshot 1" style="display: block;">
+                        <img class="carousel-image" src="project-2.jpg" alt="Project 1 Screenshot 2" style="display:none;">
+
+                        <button class="arrow-left">&larr;</button>
+                        <button class="arrow-right">&rarr;</button>
+                    </div>
+                    <p>A brief description of Project 1. What was the goal, technologies used, and your role in the project.</p>
+                    <a href="https://lolesports.com/" target="_blank">View Project</a>
+                </div>
+                <div class="project">
+                    <h3>VCT Americas 2023</h3>
+                    <div class="carousel">
+                        <img class="carousel-image" src="imgs/VCT23/im01.png" alt="Project 2 Screenshot 1" style="display: block;">
+                        <img class="carousel-image" src="imgs/VCT23/im02.jpg" alt="Project 2 Screenshot 2" style="display:none;">
+                        <img class="carousel-image" src="imgs/VCT23/im03.jpg" alt="Project 2 Screenshot 3" style="display:none;">
+                        <img class="carousel-image" src="imgs/VCT23/im04.jpg" alt="Project 2 Screenshot 4" style="display:none;">
+
+                        <button class="arrow-left">&larr;</button>
+                        <button class="arrow-right">&rarr;</button>
+                    </div>
+                     <p>A brief description of Project 2. What was the goal, technologies used, and your role in the project.</p>
+                    <a href="https://valorantesports.com/vct-overview" target="_blank">View Project</a>
+                </div>
+                <div class="project hidden">
+                    <h3>Yale For Humanity</h3>
+                    <img src="imgs/YaleTri.jpg" alt="Project 3 Screenshot">
+                    <p>Yale's For Humanity campaign required me to create interactive Kiosks, and travel around the country touring with them. Kiosks were meant to provide information on the fundraiser campaign in an easily digestible way. My role was as the sole lead programmer and point of contact with client. The Kiosks were programmed using Ventuz 6.12, and ran off a custom hardware solution that my company provided on-site.</p>
+                    <a href="https://forhumanity.yale.edu/" target="_blank">View Project</a>
+                </div>
+                <div class="project hidden">
+                    <h3>George Mason University</h3>
+                    <img src="project-4.jpg" alt="Project 4 Screenshot">
+                    <p>I worked with George Mason University to create a visual, touchscreen interactive solution for their fundraiser. Once again, I revisited the Kiosk workflow established earlier that year while working with Yale. I provided one interactive Kiosk to help donors navigate through all the campaigns that were being presented for that fundraiser. Once again, Ventuz 6.12 was used for the programming and the same custom hardware solution was used for on-site service.</p>
+                    <a href="https://forhumanity.yale.edu/" target="_blank">View Project</a>
+                </div>
+                <!-- Add more projects as needed -->
+            </div>
+            <button id="show-more-btn">Show More</button>
+        </section>
+        
+        </section>
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul class="skill-list">
+                <li>Unreal Engine</li>
+                <li>Ventuz</li>
+                <li>Python</li>
+                <li>Machine Learning</li>
+                <li>Unity</li>
+                <li>Pixel Art</li>
+                <li>Adobe Photoshop</li>
+                <li>Blender</li>
+                <li>C#</li>
+                <li>HTML & CSS</li>
+                <li>JavaScript</li>
+                <!-- Add or remove skills as needed -->
+            </ul>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <p>If you would like to get in touch, feel free to drop me a line at:</p>
+            <p><a href="mailto:hvalverde4800@gmail.com">hvalverde4800@gmail.com</a></p>
+            <p>Or connect with me on social media:</p>
+            <ul class="social-links">
+                <li><a href="https://www.linkedin.com/in/hugovalverde-/" target="_blank">LinkedIn</a></li>
+                <li><a href="https://github.com/TheValverde" target="_blank">GitHub</a></li>
+                <li><a href="https://twitter.com/GDWHugo" target="_blank">Twitter</a></li>
+                <!-- Add or remove social media links as needed -->
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Hugo Valverde</p>
+    </footer>  
+    <script src="js/show-more.js"></script>
+    <script src="carousel.js"></script>
+
+</body>

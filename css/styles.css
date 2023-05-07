@@ -1,0 +1,238 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #f0f0f0;
+    background-color: #222;
+    overflow-x: hidden;
+}
+
+/* Basic styling for the navigation */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+nav h1 {
+    margin-bottom: 1rem;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    margin-bottom: 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffc107;
+}
+
+/* Main content styling */
+main {
+    margin-left: 250px;
+    scroll-behavior: smooth;
+}
+
+section {
+    min-height: 100vh;
+    padding: 4rem;
+    position: relative;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #ffc107;
+    display: inline-block;
+}
+
+/* About section */
+.profile-image {
+    max-width: 200px;
+    border-radius: 50%;
+    float: right;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Projects section */
+.project {
+    margin-bottom: 3rem;
+}
+
+.project h3 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.project img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.project a {
+    display: inline-block;
+    background-color: #ffc107;
+    color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.project a:hover {
+    background-color: #ffa000;
+}
+
+/* Skills section */
+.skill-list {
+    list-style-type: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+}
+
+.skill-list li {
+    background-color: #333;
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.skill-list li:hover {
+    background-color: #ffc107;
+}
+
+/* Contact section */
+.social-links {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 400px;
+}
+
+.social-links li {
+    background-color: #333;
+    padding: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.social-links li:hover {
+    background-color: #ffc107;
+}
+
+.social-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #333;
+}
+
+/* Responsive navigation */
+@media screen and (max-width: 768px) {
+    nav {
+        width: 100%;
+        height: auto;
+        position: static;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        grid-gap: 1rem;
+        padding: 1rem 0;
+    }
+    nav ul {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        grid-gap: 1rem;
+    }
+    main {
+        margin-left: 0;
+    }
+}
+.hidden {
+    display: none;
+}
+
+#show-more-btn {
+    background-color: #ffc107;
+    color: #333;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: 500;
+    cursor: pointer;;
+    transition: background-color 0.3s ease;
+}
+
+#show-more-btn:hover {
+    background-color: #ffa000;
+}
+.carousel {
+    position: relative;
+    display: inline-block;
+}
+
+.carousel-image {
+    width: 100%;
+    display: none;
+}
+
+.arrow-left,
+.arrow-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 1;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.arrow-left:hover,
+.arrow-right:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.arrow-left {
+    left: 0;
+}
+
+.arrow-right {
+    right: 0;
+}
