@@ -4,19 +4,19 @@ function initCarousel(carousel) {
     let timeout;
 
     function showImage(index) {
-        images[currentIndex].style.display = 'none';
-        images[index].style.display = 'block';
-        currentIndex = index;
+        images.forEach((img, i) => {
+            img.style.display = i === index ? 'block' : 'none';
+        });
     }
 
     function showNextImage() {
-        const nextIndex = (currentIndex + 1) % images.length;
-        showImage(nextIndex);
+        currentIndex = (currentIndex + 1) % images.length;
+        showImage(currentIndex);
     }
 
     function showPrevImage() {
-        const prevIndex = (currentIndex - 1 + images.length) % images.length;
-        showImage(prevIndex);
+        currentIndex = (currentIndex - 1 + images.length) % images.length;
+        showImage(currentIndex);
     }
 
     function autoCycle() {
@@ -36,7 +36,8 @@ function initCarousel(carousel) {
         timeout = setTimeout(autoCycle, 5000);
     });
 
-    autoCycle();
+    showImage(currentIndex);
+    timeout = setTimeout(autoCycle, 5000);
 }
 
 window.onload = () => {
