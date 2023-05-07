@@ -59,7 +59,7 @@ main {
 
 section {
     min-height: 100vh;
-    padding: 4rem;
+    padding: 1rem;
     position: relative;
 }
 
@@ -72,13 +72,19 @@ section h2 {
 
 /* About section */
 .profile-image {
-    max-width: 200px;
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
     float: right;
     margin-left: 2rem;
     margin-bottom: 2rem;
+    object-fit: cover;
+    aspect-ratio: 1/1;
 }
-
+.landing-image {
+    width: 100%;
+    height: auto;
+}
 /* Projects section */
 .project {
     margin-bottom: 3rem;
@@ -240,4 +246,37 @@ section h2 {
 
 .arrow-right {
     right: 0;
+}
+#about .about-content {
+    display: flex;
+    align-items: top;
+}
+
+#about p {
+    flex: 1;
+    margin-right: 20px;
+}
+
+#about .profile-image {
+    max-width: 200px;
+    height: auto;
+    border-radius: 50%;
+}
+/* Responsive About Me section */
+@media screen and (max-width: 768px) {
+    #about .about-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #about p {
+        margin-right: 0;
+        text-align: center;
+    }
+
+    #about .profile-image {
+        margin-left: 0;
+        margin-bottom: 1rem;
+        max-width: 150px; /* Adjust the width of the image on mobile devices */
+    }
 }
