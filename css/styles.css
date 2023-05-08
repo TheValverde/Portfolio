@@ -292,7 +292,6 @@ section h2 {
 
 .gallery img {
     width: 100%;
-    max-height: 100px;
     height: auto;
     object-fit: cover;
     border-radius: 5px;
