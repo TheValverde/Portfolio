@@ -337,3 +337,10 @@ section h2 {
 .visit-website-btn:hover {
     background-color: #ffa000;
 }
+#circuit-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  
