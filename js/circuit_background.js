@@ -1,49 +1,68 @@
-let scene, camera, renderer, particles;
+let nodes = [];
+let nodeCount = 100;
+let maxDistance = 200;
+let minSize = 5;
+let maxSize = 15;
 
-function init() {
-  scene = new THREE.Scene();
-  camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-  camera.position.z = 50;
+function setup() {
+  const canvas = createCanvas(windowWidth, windowHeight);
+  canvas.position(0, 0);
+  canvas.style('z-index', '-1');
+  canvas.style('position', 'fixed');
+  background(0);
 
-  renderer = new THREE.WebGLRenderer({ alpha: true });
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  document.body.appendChild(renderer.domElement);
-  renderer.domElement.style.position = 'fixed';
-  renderer.domElement.style.zIndex = '-1';
+  for (let i = 0; i < nodeCount; i++) {
+    nodes.push(new Node());
+  }
+}
 
-  particles = new THREE.Group();
-  scene.add(particles);
+function draw() {
+  background(0);
 
-  for (let i = 0; i < 1000; i++) {
-    const geometry = new THREE.SphereGeometry(0.5, 32, 32);
-    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-    const particle = new THREE.Mesh(geometry, material);
-    particle.position.set(Math.random() * 100 - 50, Math.random() * 100 - 50, Math.random() * 100 - 50);
-    particle.velocity = new THREE.Vector3(Math.random() * 0.02 - 0.01, Math.random() * 0.02 - 0.01, Math.random() * 0.02 - 0.01);
-    particles.add(particle);
+  for (let i = 0; i < nodes.length; i++) {
+    nodes[i].update();
+    nodes[i].display();
+    for (let j = 0; j < nodes.length; j++) {
+      if (i != j) {
+        let d = dist(nodes[i].x, nodes[i].y, nodes[j].x, nodes[j].y);
+        if (d < maxDistance) {
+          stroke(255, map(d, 0, maxDistance, 255, 0));
+          line(nodes[i].x, nodes[i].y, nodes[j].x, nodes[j].y);
+        }
+      }
+    }
+  }
+}
+
+class Node {
+  constructor() {
+    this.x = random(width);
+    this.y = random(height);
+    this.size = random(minSize, maxSize);
+    this.xSpeed = random(-2, 2);
+    this.ySpeed = random(-2, 2);
   }
 
-  window.addEventListener('resize', onWindowResize, false);
-  animate();
+  update() {
+    this.x += this.xSpeed;
+    this.y += this.ySpeed;
+
+    if (this.x < 0 || this.x > width) {
+      this.xSpeed = -this.xSpeed;
+    }
+
+    if (this.y < 0 || this.y > height) {
+      this.ySpeed = -this.ySpeed;
+    }
+  }
+
+  display() {
+    noStroke();
+    fill(255, 100);
+    ellipse(this.x, this.y, this.size);
+  }
 }
 
-function onWindowResize() {
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-  renderer.setSize(window.innerWidth, window.innerHeight);
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
 }
-
-function animate() {
-  requestAnimationFrame(animate);
-
-  particles.children.forEach((particle) => {
-    particle.position.add(particle.velocity);
-    if (particle.position.x < -50 || particle.position.x > 50) particle.velocity.x = -particle.velocity.x;
-    if (particle.position.y < -50 || particle.position.y > 50) particle.velocity.y = -particle.velocity.y;
-    if (particle.position.z < -50 || particle.position.z > 50) particle.velocity.z = -particle.velocity.z;
-  });
-
-  renderer.render(scene, camera);
-}
-
-init();

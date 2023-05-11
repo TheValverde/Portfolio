@@ -72,8 +72,8 @@ section h2 {
 
 /* About section */
 .profile-image {
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
     float: right;
     margin-left: 2rem;
@@ -342,5 +342,12 @@ section h2 {
     top: 0;
     left: 0;
     z-index: -1;
+  }
+  .panel {
+    background-color: rgba(2, 0, 3, 0.75); /* semi-transparent black background */
+    border-radius: 15px; /* rounded corners */
+    padding: 20px; /* space between the text and the panel edges */
+    display: inline-block; /* adjust the panel width according to the content */
+    color: #fff; /* text color */
   }
   
