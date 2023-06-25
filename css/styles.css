@@ -350,4 +350,10 @@ section h2 {
     display: inline-block; /* adjust the panel width according to the content */
     color: #fff; /* text color */
   }
-  
+
+  .center-div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+  }
