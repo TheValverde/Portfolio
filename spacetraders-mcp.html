@@ -13,31 +13,126 @@
         <div class="individual-project-content">
             <h2 class="individual-project-title">SpaceTradersMCP</h2>
             <p class="panel">
-                Created a Model Context Protocol (MCP) server for the API driven game, SpaceTraders. This project demonstrates advanced integration of AI agents with gaming APIs, enabling intelligent automation and decision-making within the SpaceTraders universe.
+                A comprehensive Model Context Protocol (MCP) server for interacting with the SpaceTraders API. This project exposes SpaceTraders API endpoints as MCP tools, allowing AI agents to manage agents, fleets, contracts, and trading operations in the SpaceTraders universe. The implementation demonstrates advanced integration of AI agents with gaming APIs, enabling intelligent automation and decision-making within complex game environments.
             </p>
-            <!-- Project description -->
+
+            <!-- Project Overview -->
             <div class="individual-project-section">
-                <h3>Responsibilities</h3>
-                <ul class="panel">
-                    <li>Developing MCP server architecture for SpaceTraders API integration</li>
-                    <li>Implementing AI agent capabilities for automated gameplay</li>
-                    <li>Creating robust API communication protocols</li>
-                    <li>Designing intelligent decision-making algorithms for game strategy</li>
-                    <li>Testing and optimizing performance for real-time game interactions</li>
-                </ul>
+                <h3>Project Overview</h3>
+                <div class="panel">
+                    <p>This MCP server enables AI agents to:</p>
+                    <ul>
+                        <li>Register and manage SpaceTraders agents</li>
+                        <li>View and manage ships and fleets</li>
+                        <li>Accept, deliver, and fulfill contracts</li>
+                        <li>Trade resources and interact with markets</li>
+                        <li>Explore systems, waypoints, and shipyards</li>
+                    </ul>
+                    <p>The implementation is based on the MCP standard, using the <code>mcp</code> Python package for server infrastructure.</p>
+                </div>
             </div>
 
-            <!-- Project technologies -->
+            <!-- Key Features -->
+            <div class="individual-project-section">
+                <h3>Key Features Implemented</h3>
+                <div class="panel">
+                    <h4>Agent Management</h4>
+                    <ul>
+                        <li>Register new SpaceTraders agents</li>
+                        <li>View agent details and list agents</li>
+                    </ul>
+                    
+                    <h4>Contract Operations</h4>
+                    <ul>
+                        <li>List, view, accept, deliver, and fulfill contracts</li>
+                    </ul>
+                    
+                    <h4>Ship & Fleet Management</h4>
+                    <ul>
+                        <li>List ships, view ship details, purchase ships</li>
+                        <li>Navigate, dock, orbit, refuel, and extract resources with ships</li>
+                        <li>Transfer and sell cargo</li>
+                    </ul>
+                    
+                    <h4>Exploration & Trading</h4>
+                    <ul>
+                        <li>Scan systems, waypoints, and ships</li>
+                        <li>View markets and shipyards</li>
+                        <li>Chart waypoints and refine resources</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Technical Implementation -->
+            <div class="individual-project-section">
+                <h3>Technical Implementation</h3>
+                <div class="panel">
+                    <h4>Architecture</h4>
+                    <ul>
+                        <li>MCP server built with Python 3.12+</li>
+                        <li>Docker containerization for easy deployment</li>
+                        <li>Environment-based configuration management</li>
+                        <li>Persistent agent token management</li>
+                    </ul>
+                    
+                    <h4>Project Structure</h4>
+                    <ul>
+                        <li><code>src/main.py</code> — Main MCP server implementation and tool definitions</li>
+                        <li><code>src/spacetraders_utils.py</code> — SpaceTraders API client and token management</li>
+                        <li><code>src/utils.py</code> — Utility functions</li>
+                        <li><code>agent_tokens.json</code> — Persistent agent tokens (auto-managed)</li>
+                        <li><code>schemas/</code> — OpenAPI and reference JSON files for SpaceTraders API</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Technologies Used -->
             <div class="individual-project-section">
                 <h3>Technologies Used</h3>
                 <ul class="panel">
+                    <li>Python 3.12+</li>
                     <li>MCP (Model Context Protocol)</li>
-                    <li>LLM Integration</li>
-                    <li>Python</li>
-                    <li>Agentic AI</li>
-                    <li>API Development</li>
-                    <li>Game API Integration</li>
+                    <li>Docker</li>
+                    <li>uv (Python package manager)</li>
+                    <li>SpaceTraders API v2</li>
+                    <li>OpenAPI Specification</li>
+                    <li>JSON Schema</li>
+                    <li>Environment Configuration</li>
                 </ul>
+            </div>
+
+            <!-- Installation & Usage -->
+            <div class="individual-project-section">
+                <h3>Installation & Usage</h3>
+                <div class="panel">
+                    <h4>Prerequisites</h4>
+                    <ul>
+                        <li>Python 3.12+</li>
+                        <li>SpaceTraders API key (from <a href="https://my.spacetraders.io" target="_blank">my.spacetraders.io</a>)</li>
+                        <li>Docker (optional, for containerized deployment)</li>
+                    </ul>
+                    
+                    <h4>Quick Start</h4>
+                    <ol>
+                        <li>Install uv: <code>pip install uv</code></li>
+                        <li>Clone repository: <code>git clone https://github.com/TheValverde/spacetraders-mcp.git</code></li>
+                        <li>Install dependencies: <code>uv pip install -e .</code></li>
+                        <li>Configure environment: <code>SPACETRADERS_API_KEY=your-api-key-here</code></li>
+                        <li>Run server: <code>uv run src/main.py</code></li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Project Impact -->
+            <div class="individual-project-section">
+                <h3>Project Impact</h3>
+                <div class="panel">
+                    <p>This project represents a significant advancement in AI agent integration with gaming APIs. By creating a comprehensive MCP server for SpaceTraders, it demonstrates how AI agents can be empowered to interact with complex game systems autonomously.</p>
+                    
+                    <p>The implementation showcases advanced MCP server development, including proper error handling, token management, and comprehensive API coverage. It serves as a reference implementation for other developers looking to create MCP servers for gaming or API integration projects.</p>
+                    
+                    <p>Available on GitHub: <a href="https://github.com/TheValverde/spacetraders-mcp" target="_blank">https://github.com/TheValverde/spacetraders-mcp</a></p>
+                </div>
             </div>
 
 
